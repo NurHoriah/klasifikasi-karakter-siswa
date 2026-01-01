@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // KONFIGURASI API
   // ===============================
   const API_URL = "https://arthur-jeff-cancel-flooring.trycloudflare.com"
-  console.log("[INFO] Using API URL:", API_URL)
+console.log("[INFO] Using API URL:", API_URL)
+
 
   // ===============================
   // FIELD NUMERIK

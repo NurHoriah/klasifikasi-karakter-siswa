@@ -15,11 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ===============================
-  // KONFIGURASI API
+  // KONFIGURASI API (pakai environment variable)
   // ===============================
-  const API_URL = "https://arthur-jeff-cancel-flooring.trycloudflare.com"
-console.log("[INFO] Using API URL:", API_URL)
-
+  const BACKEND_URL = import.meta.env.VITE_API_URL
+  console.log("[INFO] Using API URL:", BACKEND_URL)
 
   // ===============================
   // FIELD NUMERIK
@@ -133,7 +132,9 @@ console.log("[INFO] Using API URL:", API_URL)
       0.15 * norm(payload.indeks_non_eksakta)
 
     const auditori =
-      0.35 * norm(payload.mengingat_suara) + 0.2 * norm(payload.ekskul_musik) + 0.1 * norm(payload.nilai_bahasa)
+      0.35 * norm(payload.mengingat_suara) +
+      0.2 * norm(payload.ekskul_musik) +
+      0.1 * norm(payload.nilai_bahasa)
 
     const kinestetik =
       0.3 * norm(payload.suka_praktik) +
@@ -175,7 +176,7 @@ console.log("[INFO] Using API URL:", API_URL)
       const payload = getPayload()
 
       try {
-        const resp = await fetch(`${API_URL}/predict`, {
+        const resp = await fetch(`${BACKEND_URL}/predict`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

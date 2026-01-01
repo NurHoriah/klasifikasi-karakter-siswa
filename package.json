@@ -1,0 +1,16 @@
+{
+  "name": "insan-kamil-learner-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Frontend untuk Sistem Klasifikasi Tipe Karakter Belajar Siswa SD Insan Kamil",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

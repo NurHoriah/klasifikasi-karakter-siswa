@@ -6,11 +6,12 @@
     <title>Sistem Klasifikasi Tipe Karakter Belajar - SD Insan Kamil</title>
     
     <script>
-      // Set API URL from environment or fallback to default
-      window.API_URL = window.location.hostname === 'localhost' 
-        ? 'http://localhost:5004'
-        : (window.__API_URL__ || 'http://72.60.78.25:5004');
-    </script>
+  // Set API URL from environment or fallback to default
+  window.API_URL = window.location.hostname === 'localhost'
+    ? 'http://localhost:5004' // untuk development lokal tetap pake HTTP
+    : (window.__API_URL__ || 'https://arthur-jeff-cancel-flooring.trycloudflare.com'); // production pakai HTTPS
+</script>
+
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -526,7 +527,8 @@
     </footer>
 
     <script>
-        const API_BASE = window.API_URL || "http://72.60.78.25:5004";
+        const API_BASE = window.API_URL || "https://arthur-jeff-cancel-flooring.trycloudflare.com";
+
 
         function checkAuth() {
             const token = localStorage.getItem("access_token");

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===============================
   // KONFIGURASI API
   // ===============================
-  const API_URL = window.API_URL || "http://72.60.78.25:5004"
+  const API_URL = "https://arthur-jeff-cancel-flooring.trycloudflare.com"
   console.log("[INFO] Using API URL:", API_URL)
 
   // ===============================

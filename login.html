@@ -380,10 +380,11 @@
     </div>
 
     <script>
-        const existingToken = localStorage.getItem("access_token");
-        if (existingToken) {
-            window.location.replace("index.html");
-        }
+        const existingToken = localStorage.getItem("access_token"); 
+if (existingToken && existingToken.length > 20) {
+    window.location.replace("index.html");
+}
+
 
         const authForm = document.getElementById("authForm");
         const formTitle = document.getElementById("formTitle");
@@ -401,7 +402,7 @@
         let isVerifying = false;
         let verifyingEmail = "";
 
-        const BACKEND_URL = import.meta.env.VITE_API_URL;
+        const BACKEND_URL = "https://hopefully-topics-combination-consensus.trycloudflare.com";
 
 
 
@@ -428,7 +429,7 @@
                 return;
             }
 
-            showMessage("Memproses login Google...", "");
+            showMessage("Memproses login Google...", "success");
             submitBtn.disabled = true;
 
             try {
@@ -473,7 +474,7 @@
                         showMessage(data.message || "Login Google gagal!", "error");
                     }
                     submitBtn.disabled = false;
-                    setLoading(false);
+                    
                 }
             } catch (error) {
                 showMessage("Koneksi ke server gagal! Pastikan backend running di " + BACKEND_URL, "error");

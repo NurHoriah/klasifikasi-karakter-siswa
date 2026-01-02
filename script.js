@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===============================
   // KONFIGURASI API (pakai environment variable)
   // ===============================
-  const BACKEND_URL = import.meta.env.VITE_API_URL
+  const BACKEND_URL = window.BACKEND_URL || "https://hopefully-topics-combination-consensus.trycloudflare.com";
   console.log("[INFO] Using API URL:", BACKEND_URL)
 
   // ===============================

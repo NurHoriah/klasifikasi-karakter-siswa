@@ -380,10 +380,9 @@
     </div>
 
     <script>
-        const existingToken = localStorage.getItem("access_token"); 
-if (existingToken && existingToken.length > 20) {
-    window.location.replace("index.html");
-}
+
+localStorage.removeItem("access_token");
+
 
 
         const authForm = document.getElementById("authForm");
@@ -402,7 +401,7 @@ if (existingToken && existingToken.length > 20) {
         let isVerifying = false;
         let verifyingEmail = "";
 
-        const BACKEND_URL = "https://hopefully-topics-combination-consensus.trycloudflare.com";
+        const BACKEND_URL = "https://hopefully-topics-combination-consensus.trycloudflare.com".replace(/\/$/, "");
 
 
 
